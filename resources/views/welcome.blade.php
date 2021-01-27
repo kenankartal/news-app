@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>News Application with Laravel</title>
+    <title>Dünyadan Haberler - Samet Erkovan</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
 
@@ -17,12 +17,12 @@
 </head>
 <body>
 <div id="appendDivNews">
-    <nav class="navbar fixed-top navbar-light bg-faded" style="background-color: #e3f2fd;">
-        <a class="navbar-brand" href="#">News Around the World</a>
+    <nav class="navbar fixed-top navbar-light bg-faded mb-5 " style="background-color: #1d7727;">
+        <a class="navbar-brand" style="color: white;" href="#">Dünyadan Haberler - Samet Erkovan</a>
     </nav>
     {{ csrf_field() }}
     <section id="content" class="section-dropdown">
-        <p class="select-header"> Select a news source: </p>
+        <p class="select-header"> Haber kaynağı seçin: </p>
         <label class="select">
             <select name="news_sources" id="news_sources">
                 <option value="{{$sourceId}} : {{$sourceName}}">{{$sourceName}}</option>
@@ -34,36 +34,31 @@
         </label>
         <object id="spinner" data="spinner.svg" type="image/svg+xml" hidden></object>
     </section>
-    <div id="news">
-        <p> News Source : {{$sourceName}} </p>
 
-
+    <div id="news" class="col-md-12">
+        <p style="margin-top: 10px; margin-bottom: 10px; text-align: center; justify-self: center;"> Haber Kaynağı : {{$sourceName}} </p>
         <section class="news">
             @foreach($news as $selectedNews)
-
                 <article>
                     <img src="{{$selectedNews['urlToImage']}}" alt=""/>
                     <div class="text">
                         <h1>{{$selectedNews['title']}}</h1>
                         <p style="font-size: 14px">{{$selectedNews['description']}} <a href="{{$selectedNews['url']}}"
                                                                                        target="_blank">
-                                <small>read more...</small>
+                                <small>Daha fazla oku...</small>
                             </a></p>
                         <div style="padding-top: 5px;font-size: 12px">
-                            Author: {{$selectedNews['author'] ? : "Unknown" }}</div>
+                            Yazar: {{$selectedNews['author'] ? : "Unknown" }}</div>
                         @if($selectedNews['publishedAt'] !== null)
-                            <div style="padding-top: 5px;">Date
-                                Published: {{ Carbon\Carbon::parse($selectedNews['publishedAt'])->format('l jS \\of F Y ') }}</div>
+                            <div style="padding-top: 5px;">Yayınlanma Tarihi: {{ Carbon\Carbon::parse($selectedNews['publishedAt'])->format('l jS \\of F Y ') }}</div>
                         @else
-                            <div style="padding-top: 5px;">Date Published: Unknown</div>
+                            <div style="padding-top: 5px;">Yayınlanma Tarihi: -</div>
                         @endif
 
                     </div>
                 </article>
             @endforeach
         </section>
-
-
     </div>
 </div>
 
