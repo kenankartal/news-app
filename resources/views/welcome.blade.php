@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Dünyadan Haberler - Samet Erkovan</title>
+    <title>Dünyadan Haberler - Abdulsamet Erkovan</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
 
@@ -18,7 +18,7 @@
 <body>
 <div id="appendDivNews">
     <nav class="navbar fixed-top navbar-light bg-faded mb-5 " style="background-color: #1d7727;">
-        <a class="navbar-brand" style="color: white;" href="#">Dünyadan Haberler - Samet Erkovan</a>
+        <a class="navbar-brand" style="color: white;" href="#">Dünyadan Haberler - Abdulsamet Erkovan</a>
     </nav>
     {{ csrf_field() }}
     <section id="content" class="section-dropdown">
